@@ -17,7 +17,8 @@ const express = require("express");
 const fs = require("fs");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+
 
 app.set("views", "views");
 app.set("view engine", "hbs");
@@ -85,5 +86,5 @@ app.get("/reports", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("Listening on port 3000");
+  console.log("Listening on port ", port);
 });
