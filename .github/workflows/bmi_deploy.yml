@@ -5,3 +5,17 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+Jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      -uses: actions/checkout@v2
+      -uses: bounceapp/render-actions@0.6.0
+       with: 
+        render-tokens: ${{secrets.RENDER_API_KEY}}
+        github-token: ${{secrets.ACC_API_KEY}} #GH token
+        service-id: "srv-cg90ltg2qv259v98u1kg" #unique id for each app
+        retries: 20
+        wait: 16000
+        sleep: 30000
