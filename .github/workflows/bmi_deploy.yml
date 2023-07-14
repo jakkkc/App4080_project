@@ -11,14 +11,11 @@ Jobs:
 
     steps:
       -uses: actions/checkout@v3
-      -uses: actions/setup-node@v3
-      with:
-        node-version: "16"
       -uses: bounceapp/render-actions@0.6.0
-       with: 
+      with: 
         render-tokens: ${{secrets.RENDER_API_KEY}}
         github-token: ${{secrets.ACC_API_KEY}} #GH token
-        service-id: "srv-cioeagtph6elhbscr33g" #unique id for each app
+        service-id: "srv-cg90ltg2qv259v98u1kg" #unique id for each app
         retries: 20
         wait: 16000
         sleep: 30000
