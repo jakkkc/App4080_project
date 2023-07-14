@@ -11,9 +11,10 @@ Jobs:
 
     steps:
       -uses: actions/checkout@v2
+      with:
+        node-version: "16"
       -uses: bounceapp/render-actions@0.6.0
        with: 
-        node-version: "16"
         render-tokens: ${{secrets.RENDER_API_KEY}}
         github-token: ${{secrets.ACC_API_KEY}} #GH token
         service-id: "srv-cioeagtph6elhbscr33g" #unique id for each app
